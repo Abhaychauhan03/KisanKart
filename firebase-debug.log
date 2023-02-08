@@ -1,0 +1,147 @@
+[debug] [2023-01-12T20:12:06.796Z] ----------------------------------------------------------------------
+[debug] [2023-01-12T20:12:06.798Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\chauh\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2023-01-12T20:12:06.798Z] CLI Version:   11.20.0
+[debug] [2023-01-12T20:12:06.798Z] Platform:      win32
+[debug] [2023-01-12T20:12:06.799Z] Node Version:  v16.16.0
+[debug] [2023-01-12T20:12:06.799Z] Time:          Fri Jan 13 2023 01:42:06 GMT+0530 (India Standard Time)
+[debug] [2023-01-12T20:12:06.800Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-01-12T20:12:06.892Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-01-12T20:12:06.892Z] > authorizing via signed-in user (anjalichotu20@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2023-01-12T20:12:06.904Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[warn] !  ui: Emulator UI unable to start on port 4000, starting on 4001 instead. {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI unable to start on port 4000, starting on 4001 instead."}}
+[debug] [2023-01-12T20:12:06.906Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4001},{"address":"::1","family":"IPv6","port":4001}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[warn] !  emulators: It seems that you are running multiple instances of the emulator suite for project clone-86f03. This may result in unexpected behavior. 
+[debug] [2023-01-12T20:12:06.919Z] [hub] writing locator at C:\Users\chauh\AppData\Local\Temp\hub-clone-86f03.json
+[debug] [2023-01-12T20:12:06.953Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-01-12T20:12:06.954Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-01-12T20:12:06.954Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4001},{"address":"::1","family":"IPv6","port":4001}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, hosting, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, hosting, pubsub, storage\u001b[22m"}}
+[info] +  functions: Using node@16 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@16 from host."}}
+[debug] [2023-01-12T20:12:06.984Z] defaultcredentials: writing to file C:\Users\chauh\AppData\Roaming\firebase\anjalichotu20_gmail_com_application_default_credentials.json
+[debug] [2023-01-12T20:12:06.987Z] Setting GAC to C:\Users\chauh\AppData\Roaming\firebase\anjalichotu20_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\chauh\\AppData\\Roaming\\firebase\\anjalichotu20_gmail_com_application_default_credentials.json"}}
+[debug] [2023-01-12T20:12:06.990Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/clone-86f03/adminSdkConfig [none]
+[debug] [2023-01-12T20:12:07.559Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/clone-86f03/adminSdkConfig 200
+[debug] [2023-01-12T20:12:07.559Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/clone-86f03/adminSdkConfig {"projectId":"clone-86f03","storageBucket":"clone-86f03.appspot.com","locationId":"asia-south1"}
+[debug] [2023-01-12T20:12:07.583Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-01-12T20:12:07.583Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2023-01-12T20:12:07.583Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\chauh\\.cache\\firebase\\emulators\\ui-v1.11.2\\server\\server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\chauh\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.11.2\\\\server\\\\server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2023-01-12T20:12:07.718Z] Web / API server started at 127.0.0.1:4001
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4001\n"}}
+[debug] [2023-01-12T20:12:07.719Z] Web / API server started at ::1:4001
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4001\n"}}
+[info] i  functions: Watching "D:\Web Development\amazon\amazon-clone\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"D:\\Web Development\\amazon\\amazon-clone\\functions\" for Cloud Functions..."}}
+[debug] [2023-01-12T20:12:07.858Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2023-01-12T20:12:10.216Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "stripe": "^10.3.0"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.18.9",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2023-01-12T20:12:10.216Z] Building nodejs source
+[debug] [2023-01-12T20:12:10.218Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-01-12T20:12:10.471Z] Serving at port 9005
+
+[debug] [2023-01-12T20:12:10.629Z] Got response from /__/functions.yaml {"endpoints":{"api":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2023-01-12T20:12:10.641Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: api. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api."}}
+[info] +  functions[us-central1-api]: http function initialized (http://127.0.0.1:5001/clone-86f03/us-central1/api). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/clone-86f03/us-central1/api)."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4001/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ 127.0.0.1:5001 │ http://127.0.0.1:4001/functions │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2023-01-12T20:13:36.170Z] [work-queue] {"queuedWork":["/clone-86f03/us-central1/api/payments/create-2023-01-12T20:13:36.169Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2023-01-12T20:13:36.171Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/clone-86f03/us-central1/api/payments/create-2023-01-12T20:13:36.169Z"],"workRunningCount":1}
+[debug] [2023-01-12T20:13:36.172Z] Accepted request POST /clone-86f03/us-central1/api/payments/create?total=75000 --> us-central1-api
+[debug] [2023-01-12T20:13:36.180Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2023-01-12T20:13:36.183Z] [functions] Got req.url=/clone-86f03/us-central1/api/payments/create?total=75000, mapping to path=/payments/create?total=75000 {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/clone-86f03/us-central1/api/payments/create?total=75000, mapping to path=/payments/create?total=75000"}}
+[debug] [2023-01-12T20:13:36.202Z] [worker-pool] addWorker(us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-api)"}}
+[debug] [2023-01-12T20:13:36.203Z] [worker-pool] Adding worker with key us-central1-api, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-api, total=1"}}
+[debug] [2023-01-12T20:13:36.206Z] [work-queue] {"queuedWork":["/clone-86f03/us-central1/api/payments/create-2023-01-12T20:13:36.206Z"],"queueLength":1,"runningWork":["/clone-86f03/us-central1/api/payments/create-2023-01-12T20:13:36.169Z"],"workRunningCount":1}
+[debug] [2023-01-12T20:13:36.207Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/clone-86f03/us-central1/api/payments/create-2023-01-12T20:13:36.169Z","/clone-86f03/us-central1/api/payments/create-2023-01-12T20:13:36.206Z"],"workRunningCount":2}
+[debug] [2023-01-12T20:13:36.207Z] Accepted request POST /clone-86f03/us-central1/api/payments/create?total=75000 --> us-central1-api
+[debug] [2023-01-12T20:13:36.210Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2023-01-12T20:13:36.211Z] [functions] Got req.url=/clone-86f03/us-central1/api/payments/create?total=75000, mapping to path=/payments/create?total=75000 {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/clone-86f03/us-central1/api/payments/create?total=75000, mapping to path=/payments/create?total=75000"}}
+[debug] [2023-01-12T20:13:36.220Z] [worker-pool] addWorker(us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-api)"}}
+[debug] [2023-01-12T20:13:36.221Z] [worker-pool] Adding worker with key us-central1-api, total=2 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-api, total=2"}}
+[debug] [2023-01-12T20:13:37.591Z] [runtime-status] [6120] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"D:\\Web Development\\amazon\\amazon-clone\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [6120] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"D:\\\\Web Development\\\\amazon\\\\amazon-clone\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2023-01-12T20:13:37.592Z] [runtime-status] [1840] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"D:\\Web Development\\amazon\\amazon-clone\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [1840] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"D:\\\\Web Development\\\\amazon\\\\amazon-clone\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2023-01-12T20:13:37.599Z] [runtime-status] [6120] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.22.0","resolution":"D:\\Web Development\\amazon\\amazon-clone\\functions\\node_modules\\firebase-functions\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [6120] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.22.0\",\"resolution\":\"D:\\\\Web Development\\\\amazon\\\\amazon-clone\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}"}}
+[debug] [2023-01-12T20:13:37.599Z] [runtime-status] [1840] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.22.0","resolution":"D:\\Web Development\\amazon\\amazon-clone\\functions\\node_modules\\firebase-functions\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [1840] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.22.0\",\"resolution\":\"D:\\\\Web Development\\\\amazon\\\\amazon-clone\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}"}}
+[debug] [2023-01-12T20:13:37.599Z] [runtime-status] [6120] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [6120] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2023-01-12T20:13:37.600Z] [runtime-status] [1840] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [1840] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2023-01-12T20:13:37.600Z] [runtime-status] [1840] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.22.0","resolution":"D:\\Web Development\\amazon\\amazon-clone\\functions\\node_modules\\firebase-functions\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [1840] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.22.0\",\"resolution\":\"D:\\\\Web Development\\\\amazon\\\\amazon-clone\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}"}}
+[debug] [2023-01-12T20:13:37.601Z] [runtime-status] [6120] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.22.0","resolution":"D:\\Web Development\\amazon\\amazon-clone\\functions\\node_modules\\firebase-functions\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [6120] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.22.0\",\"resolution\":\"D:\\\\Web Development\\\\amazon\\\\amazon-clone\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}"}}
+[debug] [2023-01-12T20:13:37.649Z] [runtime-status] [6120] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [6120] Checked functions.config() {\"config\":{}}"}}
+[debug] [2023-01-12T20:13:37.649Z] [runtime-status] [1840] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [1840] Checked functions.config() {\"config\":{}}"}}
+[debug] [2023-01-12T20:13:37.650Z] [runtime-status] [1840] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.22.0","resolution":"D:\\Web Development\\amazon\\amazon-clone\\functions\\node_modules\\firebase-functions\\lib\\index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [1840] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"3.22.0\",\"resolution\":\"D:\\\\Web Development\\\\amazon\\\\amazon-clone\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}}"}}
+[debug] [2023-01-12T20:13:37.650Z] [runtime-status] [6120] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.22.0","resolution":"D:\\Web Development\\amazon\\amazon-clone\\functions\\node_modules\\firebase-functions\\lib\\index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [6120] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"3.22.0\",\"resolution\":\"D:\\\\Web Development\\\\amazon\\\\amazon-clone\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}}"}}
+[debug] [2023-01-12T20:13:37.650Z] [runtime-status] [1840] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.22.0","resolution":"D:\\Web Development\\amazon\\amazon-clone\\functions\\node_modules\\firebase-functions\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [1840] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.22.0\",\"resolution\":\"D:\\\\Web Development\\\\amazon\\\\amazon-clone\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}"}}
+[debug] [2023-01-12T20:13:37.650Z] [runtime-status] [6120] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.22.0","resolution":"D:\\Web Development\\amazon\\amazon-clone\\functions\\node_modules\\firebase-functions\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [6120] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.22.0\",\"resolution\":\"D:\\\\Web Development\\\\amazon\\\\amazon-clone\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}"}}
+[debug] [2023-01-12T20:13:37.651Z] [runtime-status] [6120] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"D:\\Web Development\\amazon\\amazon-clone\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [6120] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"D:\\\\Web Development\\\\amazon\\\\amazon-clone\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2023-01-12T20:13:37.651Z] [runtime-status] [1840] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"D:\\Web Development\\amazon\\amazon-clone\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [1840] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"D:\\\\Web Development\\\\amazon\\\\amazon-clone\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2023-01-12T20:13:37.652Z] [runtime-status] [1840] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.22.0","resolution":"D:\\Web Development\\amazon\\amazon-clone\\functions\\node_modules\\firebase-functions\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [1840] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.22.0\",\"resolution\":\"D:\\\\Web Development\\\\amazon\\\\amazon-clone\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}"}}
+[debug] [2023-01-12T20:13:37.652Z] [runtime-status] [6120] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.22.0","resolution":"D:\\Web Development\\amazon\\amazon-clone\\functions\\node_modules\\firebase-functions\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [6120] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.22.0\",\"resolution\":\"D:\\\\Web Development\\\\amazon\\\\amazon-clone\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}"}}
+[debug] [2023-01-12T20:13:37.652Z] [runtime-status] [6120] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"10.3.0","resolution":"D:\\Web Development\\amazon\\amazon-clone\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [6120] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"D:\\\\Web Development\\\\amazon\\\\amazon-clone\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}}"}}
+[debug] [2023-01-12T20:13:37.653Z] [runtime-status] [1840] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"10.3.0","resolution":"D:\\Web Development\\amazon\\amazon-clone\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [1840] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"D:\\\\Web Development\\\\amazon\\\\amazon-clone\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}}"}}
+[debug] [2023-01-12T20:13:37.819Z] [runtime-status] [6120] Functions runtime initialized. {"cwd":"D:\\Web Development\\amazon\\amazon-clone\\functions","node_version":"16.16.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [6120] Functions runtime initialized. {\"cwd\":\"D:\\\\Web Development\\\\amazon\\\\amazon-clone\\\\functions\",\"node_version\":\"16.16.0\"}"}}
+[debug] [2023-01-12T20:13:37.819Z] [runtime-status] [6120] Listening to port: \\?\pipe\fire_emu_97e678e4cd135021 {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [6120] Listening to port: \\\\?\\pipe\\fire_emu_97e678e4cd135021"}}
+[debug] [2023-01-12T20:13:37.819Z] [runtime-status] [1840] Functions runtime initialized. {"cwd":"D:\\Web Development\\amazon\\amazon-clone\\functions","node_version":"16.16.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [1840] Functions runtime initialized. {\"cwd\":\"D:\\\\Web Development\\\\amazon\\\\amazon-clone\\\\functions\",\"node_version\":\"16.16.0\"}"}}
+[debug] [2023-01-12T20:13:37.820Z] [runtime-status] [1840] Listening to port: \\?\pipe\fire_emu_bbfe15212528d7c4 {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [1840] Listening to port: \\\\?\\pipe\\fire_emu_bbfe15212528d7c4"}}
+[debug] [2023-01-12T20:13:37.851Z] [worker-us-central1-api-049e8aa8-2739-400a-81c0-cf637d955644]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-api-049e8aa8-2739-400a-81c0-cf637d955644]: IDLE"}}
+[debug] [2023-01-12T20:13:37.851Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[debug] [2023-01-12T20:13:37.851Z] [worker-us-central1-api-049e8aa8-2739-400a-81c0-cf637d955644]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-api-049e8aa8-2739-400a-81c0-cf637d955644]: BUSY"}}
+[info] i  functions: Beginning execution of "api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"api\""}}
+[info] >  total is 75000 {"user":"total is 75000","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m total is 75000"}}
+[debug] [2023-01-12T20:13:37.860Z] [worker-us-central1-api-7eecc0ca-be34-45b6-96e9-974677df740a]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-api-7eecc0ca-be34-45b6-96e9-974677df740a]: IDLE"}}
+[debug] [2023-01-12T20:13:37.861Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[debug] [2023-01-12T20:13:37.861Z] [worker-us-central1-api-7eecc0ca-be34-45b6-96e9-974677df740a]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-api-7eecc0ca-be34-45b6-96e9-974677df740a]: BUSY"}}
+[info] i  functions: Beginning execution of "api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"api\""}}
+[info] >  total is 75000 {"user":"total is 75000","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m total is 75000"}}
+[debug] [2023-01-12T20:13:38.545Z] [worker-us-central1-api-7eecc0ca-be34-45b6-96e9-974677df740a]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-api-7eecc0ca-be34-45b6-96e9-974677df740a]: IDLE"}}
+[debug] [2023-01-12T20:13:38.545Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/clone-86f03/us-central1/api/payments/create-2023-01-12T20:13:36.169Z"],"workRunningCount":1}
+[info] i  functions: Finished "api" in 677.0309ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"api\" in 677.0309ms"}}
+[debug] [2023-01-12T20:13:38.606Z] [worker-us-central1-api-049e8aa8-2739-400a-81c0-cf637d955644]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-api-049e8aa8-2739-400a-81c0-cf637d955644]: IDLE"}}
+[debug] [2023-01-12T20:13:38.607Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[info] i  functions: Finished "api" in 749.3674ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"api\" in 749.3674ms"}}
+[debug] [2023-01-12T20:14:47.779Z] Received signal SIGHUP 1
