@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { auth } from "./firebase";
 import "./Login.css";
 
 function Login() {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,20 +16,7 @@ function Login() {
       .signInWithEmailAndPassword(email, password)
       .then((auth) => {
         if (auth) {
-          history.push("/");
-        }
-      })
-      .catch((error) => alert(error.message));
-  };
-
-  const register = (e) => {
-    e.preventDefault();
-
-    auth
-      .createUserWithEmailAndPassword(email, password)
-      .then((auth) => {
-        if (auth) {
-          history.push("/");
+          navigate("/");
         }
       })
       .catch((error) => alert(error.message));
@@ -37,44 +24,55 @@ function Login() {
 
   return (
     <div className="login">
-      <Link to="/">
-        <img className="login__logo" src="/kisankart.png" alt="kisankart" />
-      </Link>
+      <div className="login__left">
+        <Link to="/">
+          <img className="login__logo" src="/kisankart.png" alt="kisankart" />
+        </Link>
+        <div className="login__container">
+          <h1>Welcome back</h1>
+          <span>Please enter your details.</span>
 
-      <div className="login__container">
-        <h1>Sign-In</h1>
+          <form>
+            <h5>Email</h5>
+            <input
+              type="text"
+              placeholder="   Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <h5>Password</h5>
+            <input
+              type="password"
+              placeholder="   Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <div className="login__checkbox">
+              <label>
+                <input type="checkbox" />
+                Remember for 30 Days
+              </label>
 
-        <form>
-          <h5>Email</h5>
-          <input
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <h5>Password</h5>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+              <span>Forgot Password</span>
+            </div>
 
-          <button
-            className="login__signInButton"
-            type="submit"
-            onClick={signIn}
-          >
-            Sign In
-          </button>
-        </form>
+            <button
+              className="login__signInButton"
+              type="submit"
+              onClick={signIn}
+            >
+              Sign in
+            </button>
+          </form>
 
-        <p>
-          By continuing, you agree to Kisankart's Conditions of Use and Privacy
-          Notice.
-        </p>
-
-        <button className="login__registerButton" onClick={register}>
-          Create a KisanKart Account
-        </button>
+          <span className="login__signup">
+            Don't have an account?{" "}
+            <span onClick={() => navigate("/register")}>Sign up</span>
+          </span>
+        </div>
+      </div>
+      <div className="login__right">
+        <img className="login__image" src="/d.jpg" alt="login-scene" />
       </div>
     </div>
   );

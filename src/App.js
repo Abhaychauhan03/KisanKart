@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./Header.js";
 import Home from "./Home.js";
@@ -11,6 +11,8 @@ import { auth } from "./firebase";
 import { useStateValue } from "./Stateprovider";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
+import Productpage from "./Productpage";
+import Register from "./Register";
 
 const promise = loadStripe(
   "pk_test_51LZwIFSEQchHCmwgh8o7rdqQtGpvvcamn9vwEeKsbtzskbmu8iYYyTIpA7BOEwvBOGLxqemX5oPDLf8CS4su19Go00TOhlf5oX"
@@ -34,42 +36,70 @@ function App() {
         });
       }
     });
+    // eslint-disable-next-line
   }, []);
 
   return (
-    //Bem naming convention
-    <Router>
+    <BrowserRouter>
       <div className="app">
-        <Switch>
-          <Route path="/orders">
-            <Header />
-            <Orders />
-          </Route>
+        <Routes>
+          <Route
+            path="/orders"
+            element={
+              <div>
+                <Header />
+                <Orders />
+              </div>
+            }
+          />
 
-          <Route path="/login">
-            <Login />
-          </Route>
+          <Route
+            path="/product"
+            element={
+              <>
+                <Header /> <Productpage />
+              </>
+            }
+          />
 
-          <Route path="/checkout">
-            <Header />
-            <Checkout />
-          </Route>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
 
-          <Route path="/payment">
-            <Header />
+          <Route
+            path="/checkout"
+            element={
+              <div>
+                <Header />
+                <Checkout />
+              </div>
+            }
+          />
 
-            <Elements stripe={promise}>
-              <Payment />
-            </Elements>
-          </Route>
+          <Route
+            path="/payment"
+            element={
+              <div>
+                <Header />
 
-          <Route path="/">
-            <Header />
-            <Home />
-          </Route>
-        </Switch>
+                <Elements stripe={promise}>
+                  <Payment />
+                </Elements>
+              </div>
+            }
+          />
+
+          <Route
+            path="/"
+            element={
+              <div>
+                <Header />
+                <Home />
+              </div>
+            }
+          />
+        </Routes>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 

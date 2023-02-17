@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import CheckoutProduct from "./CheckoutProduct";
 import "./Payment.css";
 import { useStateValue } from "./Stateprovider";
@@ -15,7 +15,7 @@ function Payment() {
   const stripe = useStripe();
   const elements = useElements();
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const [succeeded, setSucceeded] = useState(false);
   const [processing, setProcessing] = useState("");
@@ -47,7 +47,6 @@ function Payment() {
         },
       })
       .then(({ paymentIntent }) => {
-        console.log("-------->", paymentIntent);
         db.collection("users")
           .doc(user?.uid)
           .collection("orders")
@@ -66,7 +65,7 @@ function Payment() {
           type: "EMPTY_BASKET",
         });
 
-        history.replace("/orders");
+        navigate("/orders", { replace: true });
       });
   };
 

@@ -1,6 +1,7 @@
 export const intialState = {
   basket: [],
   user: null,
+  isAdded: [],
 };
 
 export const getBasketTotal = (basket) =>
@@ -30,7 +31,7 @@ const reducer = (state, action) => {
       if (index >= 0) {
         newBasket.splice(index, 1);
       } else {
-        console.warn("Cant remove the product as it is not int the basket");
+        console.warn("Cant remove the product as it is not in the basket");
       }
 
       return {

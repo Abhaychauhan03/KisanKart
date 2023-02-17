@@ -14,14 +14,14 @@ function Orders() {
         .doc(user?.uid)
         .collection("orders")
         .orderBy("created", "desc")
-        .onSnapshot((snapshot) =>
+        .onSnapshot((snapshot) => {
           setOrders(
             snapshot.docs.map((doc) => ({
               id: doc.id,
               data: doc.data(),
             }))
-          )
-        );
+          );
+        });
     } else {
       setOrders([]);
     }

@@ -1,4 +1,4 @@
-.login {
+.register {
   background-color: #f9fcf8;
   height: 100vh;
   display: flex;
@@ -6,12 +6,12 @@
   overflow: hidden;
 }
 
-.login__logo {
+.register__logo {
   object-fit: contain;
   width: 100px;
 }
 
-.login__left {
+.register__left {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,19 +19,19 @@
   flex-grow: 1;
 }
 
-.login__right {
+.register__right {
   padding: 5px;
   margin-top: 3px;
 }
 
-.login__image {
+.register__image {
   min-width: 0;
   max-width: 50vw;
   height: 98vh;
   object-fit: cover;
 }
 
-.login__container {
+.register__container {
   width: 350px;
   height: fit-content;
   display: flex;
@@ -39,29 +39,29 @@
   margin-top: 30px;
 }
 
-.login__container > h1 {
+.register__container > h1 {
   font-weight: 500;
   text-align: center;
   font-weight: bold;
   margin-bottom: 5px;
 }
 
-.login__container > span {
+.register__container > span {
   margin-bottom: 30px;
   font-size: 12px;
   font-weight: bold;
   text-align: center;
 }
 
-.login__container > form > h1 {
+.register__container > form > h1 {
   margin-bottom: 5px;
 }
 
-.login__container > form > h5 {
+.register__container > form > h5 {
   margin-bottom: 5px;
 }
 
-.login__container > form > input {
+.register__container > form > input {
   height: 38px;
   margin-bottom: 18px;
   background-color: white;
@@ -70,7 +70,7 @@
   width: 98%;
 }
 
-.login__checkbox {
+.register__checkbox {
   display: flex;
   justify-content: space-between;
   margin: 7px 0;
@@ -78,21 +78,21 @@
   font-weight: bolder;
 }
 
-.login__checkbox > label {
+.register__checkbox > label {
   display: flex;
   justify-content: center;
 }
 
-.login__checkbox > label > input {
+.register__checkbox > label > input {
   margin-right: 6px;
 }
 
-.login__checkbox > span {
+.register__checkbox > span {
   cursor: pointer;
   color: #466443;
 }
 
-.login__signInButton {
+.register__signInButton {
   background: #466443;
   color: white;
   border-radius: 7px;
@@ -102,12 +102,12 @@
   margin-top: 10px;
 }
 
-.login__signup {
+.register__signup {
   margin-top: 30px;
   letter-spacing: 0.5px;
 }
 
-.login__signup > span {
+.register__signup > span {
   cursor: pointer;
   color: #466443;
 }

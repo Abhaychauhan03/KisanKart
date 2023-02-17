@@ -1,10 +1,10 @@
 import React from "react";
 import "./Header.css";
 import SearchIcon from "@material-ui/icons/Search";
-import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import { Link } from "react-router-dom";
 import { useStateValue } from "./Stateprovider";
 import { auth } from "./firebase";
+import { ShoppingCart } from "@material-ui/icons";
 
 function Header() {
   const [{ basket, user }, dispatch] = useStateValue();
@@ -18,7 +18,7 @@ function Header() {
   return (
     <div className="header">
       <Link to="/">
-        <img className="header__logo" src={"/kisankart.png"} />
+        <img className="header__logo" src={"/kisankart.png"} alt="kisan-logo" />
       </Link>
 
       <div className="header__search">
@@ -49,7 +49,8 @@ function Header() {
         </div>
         <Link to="/checkout">
           <div className="header__optionBasket">
-            <ShoppingBasketIcon />
+            <ShoppingCart />
+            <span className="header__optionLineTwo">Cart</span>
             <span className="header__optionLineTwo header__basketCount">
               {basket?.length}
             </span>
