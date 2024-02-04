@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { db } from "./firebase";
 import "./Orders.css";
 import { useStateValue } from "./Stateprovider";
 import Order from "./Order.js";
+import axios from "./axios";
 
 function Orders() {
   const [{ basket, user }, dispatch] = useStateValue();
@@ -10,30 +10,28 @@ function Orders() {
 
   useEffect(() => {
     if (user) {
-      db.collection("users")
-        .doc(user?.uid)
-        .collection("orders")
-        .orderBy("created", "desc")
-        .onSnapshot((snapshot) => {
-          setOrders(
-            snapshot.docs.map((doc) => ({
-              id: doc.id,
-              data: doc.data(),
-            }))
-          );
-        });
+      const getOrders = async () => {
+        try {
+          const response = await axios.get(`/users/${user._id}`);
+          setOrders(response.data.orders);
+        } catch (error) {
+          console.error(error);
+        }
+      };
+      getOrders();
     } else {
       setOrders([]);
     }
   }, [user]);
+  console.log(orders);
 
   return (
     <div className="orders">
       <h1>Your Orders</h1>
 
       <div className="orders__order">
-        {orders?.map((order) => {
-          return <Order order={order} />;
+        {orders?.map((order, i) => {
+          return <Order key={i} order={order} />;
         })}
       </div>
     </div>

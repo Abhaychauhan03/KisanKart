@@ -39,3 +39,8 @@
   scale: 1.05;
   box-shadow: 0 0 30px #ccc;
 }
+
+.subtotal > button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}

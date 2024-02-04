@@ -7,7 +7,6 @@ import Checkout from "./Checkout.js";
 import Login from "./Login.js";
 import Payment from "./Payment.js";
 import Orders from "./Orders.js";
-import { auth } from "./firebase";
 import { useStateValue } from "./Stateprovider";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
@@ -23,19 +22,18 @@ function App() {
   const [{}, dispatch] = useStateValue();
 
   useEffect(() => {
-    auth.onAuthStateChanged((authUser) => {
-      if (authUser) {
-        dispatch({
-          type: "SET_USER",
-          user: authUser,
-        });
-      } else {
-        dispatch({
-          type: "SET_USER",
-          user: null,
-        });
-      }
-    });
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (user) {
+      dispatch({
+        type: "SET_USER",
+        user: user,
+      });
+    } else {
+      dispatch({
+        type: "SET_USER",
+        user: null,
+      });
+    }
     // eslint-disable-next-line
   }, []);
 

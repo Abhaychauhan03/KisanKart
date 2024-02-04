@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import "./Subtotal.css";
 import CurrencyFormat from "react-currency-format";
 import { useStateValue } from "./Stateprovider";
@@ -7,8 +7,14 @@ import { useNavigate } from "react-router-dom";
 
 function Subtotal() {
   const [{ basket }, dispatch] = useStateValue();
+  const amount = useMemo(() => getBasketTotal(basket), []);
 
   const navigate = useNavigate();
+
+  const handleCheckout = (e) => {
+    if (amount < 1) return;
+    navigate("/payment");
+  };
 
   return (
     <div className="subtotal">
@@ -25,12 +31,14 @@ function Subtotal() {
           </>
         )}
         decimalScale={2}
-        value={getBasketTotal(basket)}
+        value={amount}
         displayType={"text"}
         thousandSeparator={true}
         prefix={"₹"}
       />
-      <button onClick={(e) => navigate("/payment")}>Proceed to Checkout</button>
+      <button disabled={amount < 1} onClick={handleCheckout}>
+        Proceed to Checkout
+      </button>
     </div>
   );
 }

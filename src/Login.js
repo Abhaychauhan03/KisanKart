@@ -1,25 +1,37 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { auth } from "./firebase";
 import "./Login.css";
+import axios from "./axios";
+import { useStateValue } from "./Stateprovider";
 
 function Login() {
   const navigate = useNavigate();
+  const [{}, dispatch] = useStateValue();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const signIn = (e) => {
     e.preventDefault();
-
-    auth
-      .signInWithEmailAndPassword(email, password)
-      .then((auth) => {
-        if (auth) {
-          navigate("/");
-        }
-      })
-      .catch((error) => alert(error.message));
+    const body = {
+      email: email,
+      password: password,
+    };
+    const loginUser = async () => {
+      try {
+        const response = await axios.post("/users/signIn", body);
+        localStorage.setItem("user", JSON.stringify(response.data));
+        dispatch({
+          type: "SET_USER",
+          user: response.data,
+        });
+        navigate("/");
+      } catch (error) {
+        setError(error?.response?.data?.message);
+      }
+    };
+    loginUser();
   };
 
   return (
@@ -55,7 +67,7 @@ function Login() {
 
               <span>Forgot Password</span>
             </div>
-
+            {error && <span className="error">{error}</span>}
             <button
               className="login__signInButton"
               type="submit"

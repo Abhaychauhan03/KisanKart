@@ -8,11 +8,11 @@ function Order({ order }) {
   return (
     <div className="order">
       <h2>Order</h2>
-      <p>{moment.unix(order.data.created).format("MMMM Do YYYY, h:mma")}</p>
+      <p>{new Date(order.created).toLocaleString()}</p>
       <p className="order__id">
         <small>{order.id}</small>
       </p>
-      {order.data.basket?.map((item) => (
+      {order.basket?.map((item) => (
         <CheckoutProduct
           id={item.id}
           title={item.title}
@@ -27,7 +27,7 @@ function Order({ order }) {
           <h3 className="order__total">Order Total : {value}</h3>
         )}
         decimalScale={2}
-        value={order.data.amount / 100}
+        value={order.amount / 100}
         displayType={"text"}
         thousandSeparator={true}
         prefix={"₹"}

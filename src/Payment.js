@@ -7,7 +7,6 @@ import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "./reducer";
 import axios from "./axios";
-import { db } from "./firebase";
 
 function Payment() {
   const [{ basket, user }, dispatch] = useStateValue();
@@ -21,15 +20,18 @@ function Payment() {
   const [processing, setProcessing] = useState("");
   const [error, setError] = useState(null);
   const [disabled, setDisabled] = useState(true);
-  const [clientSecret, setClientSecret] = useState(true);
+  const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {
     const getClientSecret = async () => {
-      const response = await axios({
-        method: "POST",
-        url: `/payments/create?total=${getBasketTotal(basket) * 100}`,
-      });
-      setClientSecret(response.data.clientSecret);
+      try {
+        const response = await axios.post(
+          `/payments/create?total=${getBasketTotal(basket) * 100}`
+        );
+        setClientSecret(response.data.clientSecret);
+      } catch (error) {
+        console.error(error);
+      }
     };
     getClientSecret();
   }, [basket]);
@@ -46,17 +48,17 @@ function Payment() {
           card: elements.getElement(CardElement),
         },
       })
-      .then(({ paymentIntent }) => {
-        db.collection("users")
-          .doc(user?.uid)
-          .collection("orders")
-          .doc(paymentIntent?.id)
-          .set({
+      .then(async ({ paymentIntent }) => {
+        try {
+          axios.post(`/users/order/${user._id}`, {
+            id: paymentIntent?.id,
             basket: basket,
             amount: paymentIntent.amount,
-            created: paymentIntent.created,
+            created: paymentIntent.created * 1000,
           });
-
+        } catch (error) {
+          console.error(error);
+        }
         setSucceeded(true);
         setError(null);
         setProcessing(false);
@@ -70,7 +72,7 @@ function Payment() {
   };
 
   const handleChange = (event) => {
-    setDisabled(event.empty);
+    setDisabled(!clientSecret || event.empty);
     setError(event.error ? event.error.message : "");
   };
 
@@ -96,9 +98,10 @@ function Payment() {
           </div>
 
           <div className="payment__items">
-            {basket.map((item) => {
+            {basket.map((item, i) => {
               return (
                 <CheckoutProduct
+                  key={i}
                   id={item.id}
                   title={item.title}
                   image={item.image}

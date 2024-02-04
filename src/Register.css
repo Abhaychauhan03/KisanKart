@@ -63,7 +63,7 @@
 
 .register__container > form > input {
   height: 38px;
-  margin-bottom: 18px;
+  margin-bottom: 12px;
   background-color: white;
   border-radius: 5px;
   border: 2px solid #d6e5d5;
@@ -110,4 +110,10 @@
 .register__signup > span {
   cursor: pointer;
   color: #466443;
+}
+
+.error {
+  color: red;
+  font-weight: 600;
+  font-size: small;
 }

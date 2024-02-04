@@ -1,18 +1,21 @@
 import React from "react";
 import "./Header.css";
 import SearchIcon from "@material-ui/icons/Search";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useStateValue } from "./Stateprovider";
-import { auth } from "./firebase";
 import { ShoppingCart } from "@material-ui/icons";
 
 function Header() {
   const [{ basket, user }, dispatch] = useStateValue();
-
+  const navigate = useNavigate();
   const handleAuthentication = () => {
     if (user) {
-      auth.signOut();
-    }
+      localStorage.removeItem("user");
+      dispatch({
+        type: "SET_USER",
+        user: null,
+      });
+    } else navigate("/login");
   };
 
   return (

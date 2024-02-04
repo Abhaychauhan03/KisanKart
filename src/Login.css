@@ -111,3 +111,9 @@
   cursor: pointer;
   color: #466443;
 }
+
+.error {
+  color: red;
+  font-weight: 600;
+  font-size: small;
+}

@@ -1,27 +1,36 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { auth } from "./firebase";
 import "./Register.css";
+import axios from "./axios";
 
 function Register() {
   const navigate = useNavigate();
 
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
 
-  const register = () => {
+  const register = (e) => {
+    e.preventDefault();
     if (password !== confirmPassword) {
       alert("Password & Confirm Password should be Same");
     } else {
-      auth
-        .createUserWithEmailAndPassword(email, password)
-        .then((auth) => {
-          if (auth) {
-            navigate("/");
-          }
-        })
-        .catch((error) => alert(error.message));
+      const body = {
+        name: name,
+        email: email,
+        password: password,
+      };
+      const createUser = async () => {
+        try {
+          const response = await axios.post("/users", body);
+          navigate("/login");
+        } catch (error) {
+          setError(message);
+        }
+      };
+      createUser();
     }
   };
 
@@ -40,6 +49,13 @@ function Register() {
           <span>Please enter your details.</span>
 
           <form>
+            <h5>Name</h5>
+            <input
+              type="text"
+              placeholder="   Enter your name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
             <h5>Email</h5>
             <input
               type="text"
@@ -69,6 +85,7 @@ function Register() {
 
               <span>Forgot Password</span>
             </div>
+            {error && <span className="error">{error}</span>}
 
             <button
               className="register__signInButton"
