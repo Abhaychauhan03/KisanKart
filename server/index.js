@@ -2,9 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const stripe = require("stripe")(
-  "sk_test_51LZwIFSEQchHCmwgw9RsCZzGRJO5mINuFR9xZSWVGzA1cAjXGDxnoSMMZT8lm0bKfBfTe8ql7xEIiy3AZoDG5KpY00Eyjw4fn5"
-);
+const stripe = require("stripe")(process.env.STRIPE);
 const userRouter = require("./routes/user");
 
 const app = express();
@@ -16,9 +14,7 @@ app.use(bodyParser.json());
 main().catch((err) => console.log(err));
 
 async function main() {
-  await mongoose.connect(
-    "mongodb+srv://abhay:abhay@cluster0.zs8uoii.mongodb.net/kisankart"
-  );
+  await mongoose.connect(process.env.MONGOURI);
   console.log("db connected");
 }
 
