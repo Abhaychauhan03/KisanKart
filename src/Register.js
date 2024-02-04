@@ -27,7 +27,7 @@ function Register() {
           const response = await axios.post("/users", body);
           navigate("/login");
         } catch (error) {
-          setError(message);
+          setError(error);
         }
       };
       createUser();
